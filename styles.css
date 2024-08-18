@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Ocultar barras de rolagem laterais e da página */
+html, body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+header a {
+    color: #fff;
+    margin-right: 0;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Remove o sublinhado de todos os links */
+a {
+    text-decoration: none;
+}
+
+/* Remove o sublinhado dos links dentro dos botões do carrossel */
+.carousel .list .item .buttons a {
+    text-decoration: none;
+}
+
+/* Remove o sublinhado dos links no footer */
+footer a {
+    text-decoration: none;
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #6ab577;
+    color: #fff;
+}
+
+/* Carousel */
+.carousel {
+    height: 100vh;
+    margin-top: -40px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+/* Estilo das imagens do carousel */
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 22%;
+    width: 90%;
+    max-width: 90%;
+    left: 47%;
+    transform: translateX(-50%);
+    padding-right: 67%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #000;
+}
+/* Estilo do autor do carousel */
+.carousel .list .item .author {
+    font-weight: bold;
+    letter-spacing: 9px;
+}
+
+/* Estilo do título e tópico do carousel */
+.carousel .list .item .title,
+.carousel .list .item .topic {
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+/* Cor do tópico do carousel */
+.carousel .list .item .topic {
+    color: #6ab577;
+}
+
+/* Estilo dos botões no carousel */
+.carousel .list .item .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(130px, 1fr)); /* Ajustar largura dos botões */
+    grid-template-rows: 50px; /* Aumentar altura dos botões */
+    gap: 5px; /* Aumentar o espaço entre os botões */
+    margin-top: 20px;
+}
+
+.carousel .list .item .buttons button {
+    border: none;
+    background: linear-gradient(145deg, #6ab577, #5a9d5e); /* Gradiente moderno */
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 12px; /* Aumentar arredondamento */
+    padding: 10px 20px; /* Aumentar o preenchimento */
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    cursor: pointer; /* Cursor de pointer para botões */
+    display: flex; /* Utilizar flexbox para centralizar o texto */
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+    font-size: 16px; /* Ajustar tamanho da fonte */
+}
+
+/* Estilo dos botões ao passar o mouse */
+.carousel .list .item .buttons button:hover {
+    background: linear-gradient(145deg, #5a9d5e, #6ab577); /* Inverter gradiente ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adicionar sombra */
+    transform: translateY(-3px); /* Levantar o botão ao passar o mouse */
+}
+
+/* Estilo dos botões ao clicar */
+.carousel .list .item .buttons button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra menor ao clicar */
+    transform: translateY(1px); /* Ajustar posição ao clicar */
+}
+
+/* Estilo específico para o segundo botão */
+.carousel .list .item .buttons button:nth-child(2) {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #eee;
+}
+
+/* Thumbnail */
+.thumbnail {
+    position: fixed; /* Usar fixed para manter o contêiner no canto da tela */
+    bottom: 20px; /* Ajusta a distância do fundo da tela */
+    right: 20px; /* Ajusta a distância da borda direita da tela */
+    display: flex;
+    flex-direction: column; /* Alinha os itens em uma coluna */
+    gap: 10px; /* Reduz o espaço entre as miniaturas */
+    z-index: 100;
+    max-width: 160px; /* Ajusta a largura máxima do contêiner */
+    height: auto; /* Ajusta a altura do contêiner automaticamente */
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
+}
+
+/* Estilo dos itens de miniatura */
+.thumbnail .item {
+    width: 120px; /* Largura reduzida da miniatura */
+    height: 160px; /* Altura reduzida da miniatura */
+    flex-shrink: 0; /* Evita que os itens encolham */
+    position: relative;
+    overflow: hidden; /* Oculta partes excedentes */
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Estilo das imagens das miniaturas */
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transição suave para zoom */
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+.thumbnail .item:hover img {
+    transform: scale(1.05); /* Zoom suave */
+}
+
+/* Estilo do conteúdo da miniatura */
+.thumbnail .item .content {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 5px; /* Espaçamento interno reduzido */
+}
+
+/* Estilo do título da miniatura */
+.thumbnail .item .content .title {
+    font-weight: 600; /* Aumentar o peso da fonte para destaque */
+    font-size: 14px; /* Ajustar o tamanho da fonte */
+    margin-bottom: 3px; /* Espaçamento inferior reduzido */
+}
+
+/* Estilo da descrição da miniatura */
+.thumbnail .item .content .description {
+    font-weight: 300; /* Ajustar o peso da fonte para menor destaque */
+    font-size: 12px; /* Ajustar o tamanho da fonte */
+}
+
+/* Arrows */
+.arrows {
+    position: absolute;
+    bottom: 20px; /* Ajusta a distância do fundo */
+    right: 20px;  /* Ajusta a distância da borda direita */
+    z-index: 100;
+    display: flex;
+    flex-direction: column; /* Alinha as setas verticalmente */
+    gap: 15px; /* Espaçamento entre as setas */
+}
+
+.arrows button {
+    width: 50px; /* Aumenta o tamanho dos botões */
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6ab577;
+    border: none;
+    color: #fff; /* Cor do texto */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 18px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo das setas ao passar o mouse */
+.arrows button:hover {
+    background-color: #fff;
+    color: #6ab577;
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.arrows button:focus {
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    color: #eee;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Estilo das imagens no footer */
+footer img {
+    max-width: 200px; /* Limita a largura máxima das imagens */
+    height: auto;
+}
+
+/* Media queries para responsividade */
+
+@media (max-width: 1200px) {
+    .carousel .list .item .content {
+        width: 100%;
+        padding-right: 20%; /* Ajuste para telas menores */
+        top: 10%;
+    }
+
+    .carousel .list .item .title {
+        font-size: 4em;
+    }
+
+    .carousel .list .item .topic {
+        font-size: 4em;
+    }
+
+    .carousel .list .item .buttons {
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Ajuste para botões menores */
+    }
+
+    .carousel .list .item .buttons button {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+        padding: 8px 16px; /* Ajusta o preenchimento */
+    }
+
+    .thumbnail .item {
+        width: 100px; /* Reduz a largura das miniaturas */
+        height: 140px; /* Reduz a altura das miniaturas */
+    }
+
+    .thumbnail .item .content {
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+
+    .carousel .list .item .content {
+        width: 100%;
+        padding: 0;
+        top: 5%;
+    }
+
+    .carousel .list .item .title {
+        font-size: 3em;
+    }
+
+    .carousel .list .item .topic {
+        font-size: 3em;
+    }
+
+    .carousel .list .item .buttons {
+        grid-template-columns: 1fr; /* Alinha botões em uma coluna */
+        grid-template-rows: repeat(2, 50px); /* Ajusta altura para botões em coluna */
+    }
+
+    .thumbnail {
+        bottom: 10px; /* Ajusta a distância do fundo */
+        right: 10px; /* Ajusta a distância da borda direita */
+    }
+
+    .thumbnail .item {
+        width: 80px; /* Reduz a largura das miniaturas */
+        height: 120px; /* Reduz a altura das miniaturas */
+    }
+
+    .thumbnail .item .content {
+        font-size: 10px; /* Ajusta o tamanho da fonte */
+    }
+
+    .arrows {
+        bottom: 10px; /* Ajusta a distância do fundo */
+        right: 10px; /* Ajusta a distância da borda direita */
+    }
+
+    .arrows button {
+        width: 40px; /* Reduz o tamanho dos botões */
+        height: 40px;
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel .list .item .content {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+
+    .carousel .list .item .title {
+        font-size: 2.5em; /* Ajusta o tamanho da fonte */
+    }
+
+    .carousel .list .item .topic {
+        font-size: 2.5em; /* Ajusta o tamanho da fonte */
+    }
+
+    .carousel .list .item .buttons {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 40px); /* Ajusta altura para botões em coluna */
+    }
+
+    .thumbnail {
+        bottom: 5px; /* Ajusta a distância do fundo */
+        right: 5px; /* Ajusta a distância da borda direita */
+    }
+
+    .thumbnail .item {
+        width: 60px; /* Reduz a largura das miniaturas */
+        height: 100px; /* Reduz a altura das miniaturas */
+    }
+
+    .thumbnail .item .content {
+        font-size: 8px; /* Ajusta o tamanho da fonte */
+    }
+
+    .arrows button {
+        width: 30px; /* Reduz o tamanho dos botões */
+        height: 30px;
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+    }
+}
