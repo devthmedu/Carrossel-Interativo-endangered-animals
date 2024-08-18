@@ -1,5 +1,7 @@
 
-# Carrossel Interativo
+![Cópia de Cópia de Cópia de Cópia de Animais](https://github.com/user-attachments/assets/796f6fcb-79c0-4e42-a455-48d3428b5939)
+
+# Carrossel Interativo endangered animals
 
 Este projeto é um carrossel de slides interativo com transições suaves, navegação automática e manual, e uma barra de tempo para indicar a progressão dos slides. O carrossel é responsivo e oferece uma experiência visual atraente com suporte a botões e miniaturas para navegação.
 
